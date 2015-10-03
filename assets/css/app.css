@@ -5568,8 +5568,24 @@ th.hide-for-touch {
 * {
   outline: none; }
 
-#home {
-  background-color: red; }
+.utilities {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+.paper {
+  display: block;
+  margin: 20px auto;
+  max-width: 960px; }
+  .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
+    font-family: 'Old Standard TT', serif !important; }
+  .paper .header {
+    border-bottom: 5px solid #0D1663;
+    text-align: center; }
+  .paper .story {
+    box-sizing: border-box; }
+    .paper .story.borders {
+      border: 1px solid black; }
 
 
 /*# sourceMappingURL=app.css.map */
