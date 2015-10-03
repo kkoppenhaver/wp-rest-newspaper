@@ -10,12 +10,10 @@ var config = {
     },
     js: {
         src: [ // List libraries in the order you want them loaded (deps first)
-            "bower_components/jquery/dist/jquery.min.js",
-            "bower_components/foundation/js/foundation.min.js",
-            "assets/js/jquery.slicknav.min.js",
-            "assets/js/fastclick.js",
-            "assets/js/jquery.mixitup.min.js",
-            "assets/js/slick.min.js",
+            "app/bower_components/jquery/dist/jquery.min.js",
+            "app/bower_components/foundation/js/foundation.min.js",
+            "app/bower_components/gridster/dist/jquery.gridster.min.js",
+            "app/bower_components/fastclick/lib/fastclick.js",
             "assets/js/app.js"
         ],
         dest: 'assets/js'
