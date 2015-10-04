@@ -4,10 +4,44 @@
 	text-align: center;
 }
 
+.tt-menu {
+	background-color: white;
+	border: 2px solid black;
+}
+
+.twitter-typeahead {
+	width: 50%;
+}
+
+.tt-suggestion {
+	padding: 5px;
+	&:hover {
+		background-color: #CCCCCC;
+		cursor: pointer;
+	}
+
+	&:not(:first-child) {
+		border-top: 1px solid black;
+	}
+}
+
+.tt-cursor {
+	background-color: #CCCCCC;
+}
+
+.modal-add-story {
+	margin-top: 20px;
+}
+
 .paper {
 	display: block;
 	margin: 20px auto;
 	max-width: 960px;
+	position: relative;
+
+	li {
+		list-style: none;
+	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Cabin', sans-serif !important;
@@ -24,6 +58,8 @@
 
 	.story {
 		box-sizing: border-box;
+		overflow: hidden;
+
 		&.borders {
 			border: 1px solid black;
 		}

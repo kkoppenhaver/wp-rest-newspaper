@@ -1,5 +1,11 @@
 ;(function(window, $){
 
+  var posts;
+  var post_titles = [];
+  var post_ids = [];
+  var selectedPost;
+  var widgetCount = 0
+
   $('button.border').click(function(){
     if($('.story').hasClass('borders')) {
       $('.story').removeClass('borders');
@@ -11,23 +17,86 @@
     }
   });
 
-  var gridster;
+  $('button.add-story').click(function(){
+    $('#addStoryModal').foundation('reveal', 'open');
+  });
 
-      $(function(){
+  gridster = $(".paper ul").gridster({
+    widget_base_dimensions: [160, 160],
+    resize: {
+      enabled: true
+    }
+  }).data('gridster');
 
-        gridster = $(".story-container").gridster({
-          widget_base_dimensions: [100, 55],
-          widget_margins: [5, 5],
-          helper: 'clone',
-          resize: {
-            enabled: true,
-            max_size: [4, 4],
-            min_size: [1, 1]
-          }
-        }).data('gridster');
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
 
+      // an array that will be populated with substring matches
+      matches = [];
 
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
       });
+
+      cb(matches);
+    };
+  };
+
+  //API Stuff
+  
+  var apiBase = 'http://wp-rest.dev/wp-json/wp/v2/';
+
+  $.get( apiBase + "posts?filter[posts_per_page]=-1", function( data ) {
+    $( ".result" ).html( data );
+    
+    posts = data;
+    $.each(posts, function(index, value){
+      post_titles.push(value.title.rendered);
+      post_ids.push(value.id);
+    });
+
+    $('#pendingStory.typeahead').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'titles',
+      source: substringMatcher(post_titles)
+    });
+  });
+
+  $('#pendingStory').bind('typeahead:selected', function(obj, datum, name) {      
+    selectedPost = posts[post_titles.indexOf(datum)];
+
+    $('.story-preview').html('<h3>' + selectedPost.title.rendered + '</h3>' + selectedPost.content.rendered.substring(0, 200) + '...');  
+  
+    
+  });
+
+  $('.modal-add-story').click(function(){
+    $('#addStoryModal').foundation('reveal', 'close');
+    $('.story-preview').html('This is where a preview of the story will go.');
+    $('#pendingStory').val('');
+
+    var gridster = $(".gridster ul").gridster().data('gridster');
+
+    var storyTitle = selectedPost.title.rendered;
+    var storyAuthor = 'Keanan Koppenhaver';
+    var storyCopy = selectedPost.content.rendered;
+
+    html = '<li class="story"><h2>' + storyTitle + '</h2><h3>By: ' + storyAuthor + '</h3><p class="body-copy">' + storyCopy + '</p></li>';
+    gridster.add_widget(html, 2, 1);
+    widgetCount++;
+  })
 
 })(window, jQuery);
 

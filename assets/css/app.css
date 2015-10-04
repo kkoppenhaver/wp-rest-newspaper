@@ -5573,10 +5573,34 @@ th.hide-for-touch {
   margin-bottom: 20px;
   text-align: center; }
 
+.tt-menu {
+  background-color: white;
+  border: 2px solid black; }
+
+.twitter-typeahead {
+  width: 50%; }
+
+.tt-suggestion {
+  padding: 5px; }
+  .tt-suggestion:hover {
+    background-color: #CCCCCC;
+    cursor: pointer; }
+  .tt-suggestion:not(:first-child) {
+    border-top: 1px solid black; }
+
+.tt-cursor {
+  background-color: #CCCCCC; }
+
+.modal-add-story {
+  margin-top: 20px; }
+
 .paper {
   display: block;
   margin: 20px auto;
-  max-width: 960px; }
+  max-width: 960px;
+  position: relative; }
+  .paper li {
+    list-style: none; }
   .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
     font-family: 'Cabin', sans-serif !important; }
   .paper p {
@@ -5585,7 +5609,8 @@ th.hide-for-touch {
     border-bottom: 5px solid #0D1663;
     text-align: center; }
   .paper .story {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    overflow: hidden; }
     .paper .story.borders {
       border: 1px solid black; }
 

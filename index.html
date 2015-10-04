@@ -9,7 +9,9 @@
   <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, minimal-ui">
   <meta name="googlebot" content="index, follow" />
   <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700|Cabin:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+  
   <link rel="stylesheet" href="assets/css/app.css" />
+  <link rel="stylesheet" href="assets/css/jquery.gridster.min.css">
   
 
 
@@ -19,44 +21,31 @@
   <div class="wrapper" id="home">
     <div class="utilities">
       <button class="border">Toggle Borders</button>
+      <button class="add-story">Add Story</button>
     </div>
     <div class="paper">
       <div class="header">
         <h1>Javascript News Daily</h1>
       </div>
-      <div class="story-container">
-        <div class="story">
-          <h3 class="headline">Headline 1</h3>
-          <h5 class="byline">By: Keanan Koppenhaver</h5>
-
-          <div class="body-copy"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat molestiae, vero, iste ipsam incidunt beatae et veritatis blanditiis rerum aut, quam non saepe, praesentium minus ullam officiis dolorum modi veniam!</p></div>
-        </div>
-        <div class="story">
-          <h3 class="headline">Headline 2</h3>
-          <h5 class="byline">By: Keanan Koppenhaver</h5>
-
-          <div class="body-copy"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat molestiae, vero, iste ipsam incidunt beatae et veritatis blanditiis rerum aut, quam non saepe, praesentium minus ullam officiis dolorum modi veniam!</p></div>
-        </div>
-        <div class="story">
-          <h3 class="headline">Headline 3</h3>
-          <h5 class="byline">By: Keanan Koppenhaver</h5>
-
-          <div class="body-copy"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat molestiae, vero, iste ipsam incidunt beatae et veritatis blanditiis rerum aut, quam non saepe, praesentium minus ullam officiis dolorum modi veniam!</p></div>
-        </div>
-        <div class="story">
-          <h3 class="headline">Headline 4</h3>
-          <h5 class="byline">By: Keanan Koppenhaver</h5>
-
-          <div class="body-copy"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat molestiae, vero, iste ipsam incidunt beatae et veritatis blanditiis rerum aut, quam non saepe, praesentium minus ullam officiis dolorum modi veniam!</p></div>
-        </div>
-        <div class="story">
-          <h3 class="headline">Headline 5</h3>
-          <h5 class="byline">By: Keanan Koppenhaver</h5>
-
-          <div class="body-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat molestiae, vero, iste ipsam incidunt beatae et veritatis blanditiis rerum aut, quam non saepe, praesentium minus ullam officiis dolorum modi veniam!</div>
-        </div>
+      <div class="gridster">
+        <ul>
+        </ul>
       </div>
     </div>
+  </div>
+
+  <!-- Add Story Modal -->
+
+  <div id="addStoryModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Add Story</h2>
+    <label for="pendingStory">Story Title</label>
+    <input type="text" id="pendingStory" class="typeahead">
+
+    <label for="">Story Preview</label>
+    <div class="story-preview">This is where a preview of the story will go.</div>
+
+    <button class="modal-add-story">Add Story</button>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
   <!-- Load Scripts -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script> 
