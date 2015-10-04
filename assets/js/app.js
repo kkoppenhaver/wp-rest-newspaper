@@ -4,7 +4,6 @@
   var post_titles = [];
   var post_ids = [];
   var selectedPost;
-  var widgetCount = 0
 
   $('button.border').click(function(){
     if($('.story').hasClass('borders')) {
@@ -95,7 +94,6 @@
 
     html = '<li class="story"><h2>' + storyTitle + '</h2><h3>By: ' + storyAuthor + '</h3><p class="body-copy">' + storyCopy + '</p></li>';
     gridster.add_widget(html, 2, 1);
-    widgetCount++;
   })
 
 })(window, jQuery);
