@@ -86,13 +86,14 @@
     $('.story-preview').html('This is where a preview of the story will go.');
     $('#pendingStory').val('');
 
+
+
     var gridster = $(".gridster ul").gridster().data('gridster');
 
     var storyTitle = selectedPost.title.rendered;
-    var storyAuthor = 'Keanan Koppenhaver';
     var storyCopy = selectedPost.content.rendered;
 
-    html = '<li class="story"><h2>' + storyTitle + '</h2><h3>By: ' + storyAuthor + '</h3><p class="body-copy">' + storyCopy + '</p></li>';
+    html = '<li class="story"><h2>' + storyTitle + '</h2><p class="body-copy">' + storyCopy + '</p></li>';
     gridster.add_widget(html, 2, 1);
   })
 
