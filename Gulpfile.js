@@ -16,6 +16,8 @@ var config = {
             "app/bower_components/gridster/dist/jquery.gridster.min.js",
             "app/bower_components/fastclick/lib/fastclick.js",
             "assets/js/typeahead.js",
+            "assets/js/html2canvas.js",
+            "assets/js/jspdf.min.js",
             "assets/js/app.js"
         ],
         dest: 'assets/js'

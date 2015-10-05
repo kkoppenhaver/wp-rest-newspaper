@@ -95,7 +95,14 @@
 
     html = '<li class="story"><h2>' + storyTitle + '</h2><p class="body-copy">' + storyCopy + '</p></li>';
     gridster.add_widget(html, 2, 1);
-  })
+  });
+
+  $('.export-pdf').click(function(){
+      var pdf = new jsPDF();
+      pdf.addHTML($(".paper")[0],function() {
+        pdf.save('js-news-daily.pdf');
+      });
+  });
 
 })(window, jQuery);
 
