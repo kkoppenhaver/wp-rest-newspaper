@@ -5600,6 +5600,8 @@ th.hide-for-touch {
   margin: 20px auto;
   max-width: 960px;
   position: relative; }
+  .paper ul {
+    margin-left: 0px !important; }
   .paper li {
     list-style: none; }
   .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {

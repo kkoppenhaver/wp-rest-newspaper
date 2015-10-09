@@ -21,7 +21,8 @@
   });
 
   gridster = $(".paper ul").gridster({
-    widget_base_dimensions: [160, 160],
+    widget_base_dimensions: [80, 80],
+    widget_margins: [0, 0],
     resize: {
       enabled: true
     }
