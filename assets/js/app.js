@@ -52,7 +52,7 @@
 
   //API Stuff
   
-  var apiBase = 'http://ibd-prototype.dev//wp-json/wp/v2/';
+  var apiBase = 'http://wp-rest.dev/wp-json/wp/v2/';
 
   $.get( apiBase + "posts?filter[posts_per_page]=-1", function( data ) {
     $( ".result" ).html( data );
