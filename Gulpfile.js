@@ -10,11 +10,10 @@ var config = {
     },
     js: {
         src: [ // List libraries in the order you want them loaded (deps first)
-            "app/bower_components/jquery/dist/jquery.min.js",
-            "app/bower_components/foundation/js/foundation.min.js",
-            "app/bower_components/foundation/js/foundation/foundation.reveal.js",
-            "app/bower_components/gridster/dist/jquery.gridster.min.js",
-            "app/bower_components/fastclick/lib/fastclick.js",
+            "bower_components/foundation/js/foundation.min.js",
+            "bower_components/foundation/js/foundation/foundation.reveal.js",
+            "bower_components/gridster/dist/jquery.gridster.js",
+            "bower_components/fastclick/lib/fastclick.js",
             "assets/js/typeahead.js",
             "assets/js/html2canvas.js",
             "assets/js/jspdf.min.js",
